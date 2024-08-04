@@ -1,8 +1,17 @@
 import signInSideImage from 'assets/images/signin-side-image.jpeg';
 import { ArrowRightIcon, Button, Checkbox, Divider, Input, Label, PhoneInput } from 'components';
+import { useSignInUserMutation } from 'store/auth';
 
 export function AuthStep() {
-  const handleUserSignIn = () => {};
+  const [signInUserMutation] = useSignInUserMutation();
+
+  const handleUserSignIn = () => {
+    signInUserMutation({ password: 'asdf123', email: 'onur1@gmail.com' })
+      .unwrap()
+      .catch((error) => {
+        console.log('error: ', error);
+      });
+  };
 
   return (
     <div className='grid grid-cols-2 justify-between p-6 pt-0'>

@@ -3,7 +3,7 @@ import * as React from "react";
 function App() {
   return (
     <main>
-      <p>CRA App</p>
+      <p className="text-lg font-medium">CRA App</p>
     </main>
   );
 }

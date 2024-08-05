@@ -5,6 +5,7 @@ export * from './ui/button/button.component';
 export * from './ui/checkbox/checkbox.component';
 export * from './ui/form/form.component';
 export * from './ui/icon';
+export * from './ui/input-otp/input-otp.component';
 export * from './ui/input/input.component';
 export * from './ui/label/label.component';
 export * from './ui/phone-input/phone-input.component';

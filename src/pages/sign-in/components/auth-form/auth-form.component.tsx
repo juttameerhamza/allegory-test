@@ -22,7 +22,7 @@ import { useSignInUserMutation } from 'store/auth';
 import { SignInFormData, signInFormSchema } from './auth-form.schema';
 
 export function AuthForm() {
-  const [signInUserMutation, { isLoading }] = useSignInUserMutation();
+  const [signInUserMutation, { isLoading }] = useSignInUserMutation({ fixedCacheKey: 'sign-in' });
 
   const form = useForm<SignInFormData>({
     mode: 'onTouched',

@@ -1,6 +1,6 @@
 export function ErrorToast({ title, description, onClick }: { title: string; description?: string; onClick: () => void }) {
   return (
-    <div className='relative rounded-[10px] border border-[#F8C9D2] bg-[#FDEDF0] p-4'>
+    <div className='relative min-w-[360px] rounded-[10px] border border-[#F8C9D2] bg-[#FDEDF0] p-4'>
       <div className='flex gap-4'>
         <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
           <g clipPath='url(#clip0_2452_6202)'>

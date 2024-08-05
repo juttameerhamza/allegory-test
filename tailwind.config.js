@@ -9,13 +9,15 @@ module.exports = {
         'neutral-0': '#FFFFFF',
         'neutral-1': '#F7F7F8',
         'neutral-2': '#E9EAEC',
+        'neutral-4': '#C8CAD0',
         'neutral-5': '#BABDC5',
         'neutral-6': '#9EA2AD',
         'neutral-8': '#717684',
         'neutral-12': '#1F2228',
         'neutral-13': '#14151A',
         'primary-7': '#2348ED',
-        'primary-8': '#1B35DA'
+        'primary-8': '#1B35DA',
+        destructive: '#DF1C41'
       },
       fontFamily: {
         'instrument-sans': ['Instrument Sans', 'sans-serif'],

@@ -1,11 +1,13 @@
 import { SignInCard } from 'components';
 import { AuthLayout } from 'layout/auth.layout';
+import { useAppSelector } from 'store/hooks';
 import { AuthStep } from './components/auth-step/auth-step.component';
 
-const steps = [AuthStep];
+const steps = [AuthStep, () => <p>OTP Step</p>];
 
 export function SignIn() {
-  const Component = steps[0];
+  const { step } = useAppSelector((state) => state.auth);
+  const Component = steps[step - 1];
 
   return (
     <AuthLayout>

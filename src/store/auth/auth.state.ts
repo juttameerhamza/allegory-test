@@ -13,12 +13,23 @@ const reducerName = 'auth';
 const authSlice = createSlice({
   name: reducerName,
   initialState,
-  reducers: {},
+  reducers: {
+    decreaseStep: (state) => {
+      state.step = state.step - 1;
+    }
+  },
   extraReducers(builder) {
     builder.addMatcher(authApiSlice.endpoints.signInUser.matchFulfilled, (state) => {
       state.step = state.step + 1;
     });
+    builder.addMatcher(authApiSlice.endpoints.verifyOTPCode.matchFulfilled, (state, { payload }) => {
+      state.accessToken = payload.accessToken;
+      state.user = payload.user;
+      state.step = state.step + 1;
+    });
   }
 });
+
+export const { decreaseStep } = authSlice.actions;
 
 export { authSlice };

@@ -1,5 +1,13 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react';
-import { isApiError, signInUser, SignInUserPayload, SignInUserResponse } from 'api';
+import {
+  isApiError,
+  signInUser,
+  SignInUserPayload,
+  SignInUserResponse,
+  verifyOTPCode,
+  VerifyOTPCodePayload,
+  VerifyOTPCodeResponse
+} from 'api';
 
 const authApiSlice = createApi({
   reducerPath: 'authApi',
@@ -25,10 +33,31 @@ const authApiSlice = createApi({
             };
           });
       }
+    }),
+    verifyOTPCode: builder.mutation<VerifyOTPCodeResponse, VerifyOTPCodePayload>({
+      queryFn: async (payload) => {
+        return verifyOTPCode(payload)
+          .then((data) => {
+            return {
+              data
+            };
+          })
+          .catch((error) => {
+            if (isApiError(error)) {
+              return {
+                error: error.response?.data
+              };
+            }
+
+            return {
+              error
+            };
+          });
+      }
     })
   })
 });
 
-export const { useSignInUserMutation } = authApiSlice;
+export const { useSignInUserMutation, useVerifyOTPCodeMutation } = authApiSlice;
 
 export { authApiSlice };

@@ -1,7 +1,12 @@
+import { Toaster } from 'components';
+import { SignIn } from 'pages/sign-in';
+
 function App() {
   return (
-    <main>
-      <p className='text-lg font-medium'>CRA App</p>
+    <main className='h-full'>
+      <SignIn />
+
+      <Toaster />
     </main>
   );
 }
